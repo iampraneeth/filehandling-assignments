@@ -1,0 +1,70 @@
+package com.capgemini.file.model;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+public class MyClass implements Serializable {
+	private int rollNo;
+	private String name;
+	private int marks;
+
+	public MyClass(int rollNo, String name, int marks) {
+		super();
+		this.rollNo = rollNo;
+		this.name = name;
+		this.marks = marks;
+	}
+
+	public MyClass() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getRollNo() {
+		return rollNo;
+	}
+
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMarks() {
+		return marks;
+	}
+
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+
+	@Override
+	public int hashCode() {
+
+		return Objects.hash(rollNo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof MyClass))
+			return false;
+
+		MyClass MyClass = (MyClass) obj;
+		if (this.rollNo == MyClass.rollNo)
+			return true;
+		else
+			return false;
+
+	}
+
+}
